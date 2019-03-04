@@ -1,0 +1,128 @@
+
+/* #Site Styles
+-------------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Mate+SC);
+
+
+body {background-color:#222;z-index:1;}
+
+
+
+.bgPanel{z-index:1;position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;background-color:#222;}
+.imgPanel {display:none;}
+.imgPanel.visible{display:block;}
+.imgPanel img{position:relative;bottom:-5%;top:-5%;width:110%;}
+
+.logo {position:absolute;top:5px;left:10px;width:275px;height:235px;z-index:3;}
+
+.toc {position:absolute;top:5px;right:10%;width:600px;z-index:3;font-size:1.2em;text-align:center;}
+.toc .link {margin:20px;font-family: 'Mate SC', serif;color:#FFF;display:inline;cursor:pointer;font-weight:bold;}
+
+.label {font-weight:lighter;}
+
+.content {position:absolute;height:75%;right:10%;top:50px;width:600px;z-index:3;overflow-y:auto;}
+.content .contentBG {position:absolute;height:100%;top:0px;width:100%;left:0px;background-color:#111;z-index:-1;
+	-moz-opacity:.75; filter:alpha(opacity=75); opacity:.75; }
+
+.contentDiv {position:relative;text-align:left;padding:25px;font-family: 'Mate SC', serif;color:#FFF;z-index:5;display:none;}
+.contentDiv.visible {display:block;}
+.contentDiv p {margin-bottom:10px;}
+
+#inviteDiv {text-align:center;}
+#pictureDiv {padding:0;}
+
+.picsWrapper {padding:2px;width:100%;}
+.picTable {width:100%;}
+.picTable td {text-align:center;vertical-align:middle;padding:10px 0;}
+.picTable img {max-width:80%;}
+
+.result {margin:10px 10px 30px;}
+.result p {text-indent:0;}
+.resultsTable {color:inherit;margin-left:10px;}
+.resultsTable td {padding:0 5px;}
+
+.credits {position:absolute;width:100%;bottom:5px;left:0;color:#fff;z-index:5;}
+.creditLeft {margin-left:10px;float:left;}
+.creditRight {margin-right:10px;float:right;}
+
+/* #Page Styles
+-------------------------------------------------- */
+
+/* #Media Queries
+-------------------------------------------------- */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+		.logo {width:175px;}
+		.logo img {width:175px;}
+		.toc {left:200px;width:500px;}
+		.content {left:200px;top:50px;width:500px;}
+	}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 756px) and (max-width: 959px) {
+		.logo {width:175px;}
+		.logo img {width:175px;}
+		.toc {left:200px;width:500px;}
+		.content {left:200px;top:50px;width:500px;}
+		
+		
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 755px) {
+		.bgPanel {height:680px;}
+		.imgPanel img {display:none;}
+		.logo {position:relative;text-align:center;width:100%;height:auto;left:auto;}
+		.logo img {width:175px;}
+		.toc {position:relative;text-align:center;width:100%;left:auto;right:auto;}
+		.content {position:relative;text-align:center;width:80%;left:10%;right:auto;height:auto;max-height:400px;}
+		.credits {top:660px;}
+		
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 755px) {
+		.bgPanel {height:680px}
+		.imgPanel img {display:none;}
+		.logo {position:relative;text-align:center;width:100%;height:auto;left:auto;}
+		.logo img {width:175px;}
+		.toc {position:relative;text-align:center;width:100%;left:auto;right:auto;}
+		.content {position:relative;text-align:center;width:80%;left:10%;right:auto;height:auto;max-height:400px;}
+		.credits {top:660px;}
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+		body {min-height:780px;}
+		.bgPanel {height:720px;}
+		.imgPanel img {display:none;}
+		.logo {position:relative;text-align:center;width:100%;height:auto;left:auto;}
+		.logo img {width:175px;}
+		.toc {position:relative;text-align:center;width:100%;left:auto;right:auto;margin-top:10px;}
+		.toc .link {margin:auto;padding:10px;line-height:60px;background-color:#444;}
+		.content {position:relative;text-align:center;width:80%;left:10%;right:auto;height:400px;}
+		.credits {top:750px;text-align:center;}
+		.creditLeft {margin-left:0px;float:none;}
+		.creditRight {margin-right:0px;float:none;}
+		
+	}
+
+
+/* #font-face
+-------------------------------------------------- */
+/* 	Create a "fonts" folder at the root,
+	copy your FontName into code below and remove
+	comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/
+

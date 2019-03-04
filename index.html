@@ -1,16 +1,195 @@
+<!DOCTYPE html>
+
 <html>
+    <head>
+        <title>Tour de Puke</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 
-<head>
-<script>
+        <link rel="stylesheet" href="css/tbase.css">
+		<link rel="stylesheet" href="css/t4sq.css">
+		<link rel="stylesheet" href="css/tourdepuke.css">
 
-</script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="scripts/tourdepuke.js"></script>
 
-</head>
+		<script type="text/javascript">
 
-<body>
+        $(document).ready(function(){
 
-<div>Test Tour De Puke</div>
+			for (i = 2; i < 12; i++){
+				$(".bgPanel").append('<div id="imgPanel' + i + '" class="imgPanel"><img src="img/bg' + i + '.jpg"></div>');
+			}
+        	setTimeout("refreshBG()",5000);
 
-</body>
+			$('.toc .link').click(function(){
+				var div = $($(this).attr('content'));
+				$('.contentDiv').hide();
+				if ($(this).attr('url') != undefined){
+					div.load($(this).attr('url'));
+				}
+				div.fadeIn('100');
+			});
 
+        });
+
+		currentImg = 1;
+		function refreshBG(){
+			$('#imgPanel' + currentImg).fadeOut(1000);
+			currentImg = currentImg == 11 ? 1 : currentImg + 1;
+			$('#imgPanel' + currentImg).fadeIn(2000);
+			setTimeout("refreshBG()",5000);
+		}
+
+        </script>
+
+    </head>
+
+
+    <body>
+
+
+		<div class="bgPanel">
+			<div id="imgPanel1" class="imgPanel visible"><img src="img/bg1.jpg"></div>
+		</div>
+
+
+
+			<div class="logo">
+				<a href="."><img src="img/tdp_logo_wht_big.png"></a>
+			</div>
+
+			<div class="toc">
+				<div class="link" content="#inviteDiv" >Home</div>
+				<div class="link" content="#historyDiv" >History</div>
+				<div class="link" content="#pictureDiv" >Pictures</div>
+				<div class="link" content="#resultsDiv" >Results</div>
+
+
+
+			</div>
+
+
+			<div class="content">
+
+
+					<div id="inviteDiv" class="contentDiv visible">
+						<div class="contentBG">&nbsp;</div>
+						We are pleased to announce the<br/>
+						<h5>Annual Sufferfest</h5>
+						that is the
+						<h1>Tour de Puke</h2>
+						<h4>100 Kilometers of Hills From Hell</h4>
+						 to commence on the last Saturday of That Other Tour <br/>
+						at the Percy Warner Stone Gates<br/>
+						at the crack of dawn.
+						<br/><br/>
+						First 50 registrations are <strong>FREE</strong>.
+					</div>
+
+					<div id="historyDiv" class="contentDiv">
+						<div class="contentBG">&nbsp;</div>
+						<p>More truth than myth, the Tour de Puke has a long and illustrious history. The brainchild of legendary Nashville cyclists Larry Baker, Wes Allen, John White, and Steve Cochran and facilitated by the likes of Jim Fitzpatrick and Carter Overton, the Tour de Puke is perennially the most challenging and underrated (non)event to grace the hills of Percy Warner park. Lance Armstrong is annually granted an honorary free registration, but he has yet to find the manhood to wheel the line.</p>
+						<p>Traditionally commencing on the last Saturday of that other annual bicycle Tour occurring in France, the Tour de Puke starts at the crack of dawn with a neutral start down the famed Belle Meade Boulevard before entering the Percy Warner park. Most people ride the neutral start humming the national anthem since the official anthem singer (Sheryl Crow) has never bothered showing up. The course tends to enjoy minor changes from year to year, but the enduring characteristic is riding every potential loop within the park to add up to roughly 100 kilometers. The competitors face many grueling hills (most of them multiple times) in the July heat of Nashville; the early start aids in survival, and no one wants to be on the course by the time the sun reaches its peak. The race finishers are welcomed home by a cheering person who wears a watch and carries a clipboard, recording all of the participants times for future generations to see.</p>
+						<p>The post race happenings will typically involve each racer retiring to his or her own home to nap away the heat of the day before venturing back out to attend the post-race banquet.  A red-carpet affair, the banquet provides an opportunity for the racers to toast their accomplishments while discussing the day's trials and triumphs and re-building their camaraderie after a day of fierce competition.</p>
+						<p>Want to know more about the history of the Tour de Puke?  Your best bet is to ask Larry. Don't know Larry?  Well, you should.</p>
+					</div>
+					<div id="pictureDiv" class="contentDiv">
+            <div class="contentBG">&nbsp;</div>
+            <div class="randomPics">
+            	<table class="picTable">
+            	</table>
+            </div>
+
+            <script type="text/javascript">
+            	var picUrls = ['1.jpg','100-0020_IMG.JPG','6.jpg','2005-038.jpg','100-0021_IMG.JPG','100-0002_IMG.JPG','7.jpg','2005-0202.jpg','3.jpg','4.jpg','2005-0092.jpg','tourdepuke photo-low res.jpg','100-0019_IMG.JPG','100-0011_IMG.JPG','100-0015_IMG.JPG','100-0018_IMG.JPG','2005-007.jpg','5.jpg','2.jpg','2005winners.jpg','2005-0102.jpg','100-0005_IMG.JPG','2005-018.jpg'];
+
+            	picUrls = randomize(picUrls);
+            	displayPic(picUrls,0);
+
+
+            </script>
+
+					</div>
+					<div id="resultsDiv" class="contentDiv">
+            <div class="contentBG">&nbsp;</div>
+            <div class="resultsWrapper">
+            	<h2>Known Results</h2>
+
+            	<div class="result">
+            		<h3>2008</h3>
+            		<p><span class="label">Finishers: </span>
+            			<table class="resultsTable">
+            				<tr><td>1</td><td class="name">Dwight Wiles</td><td>4:09:24</td><td></td></tr>
+            				<tr><td>2</td><td class="name">Larry Baker</td><td>+0</td><td></td></tr>
+            				<tr><td>3</td><td class="name">Steve Bell</td><td>+4</td><td></td></tr>
+            				<tr><td>4</td><td class="name">Henry McFadden</td><td>+5</td><td></td></tr>
+            				<tr><td>5</td><td class="name">Ken Switzer</td><td>+18</td><td></td></tr>
+            				<tr><td>6</td><td class="name">Wes Allen</td><td>+22</td><td></td></tr>
+            				<tr><td>7</td><td class="name">Tony Ruff</td><td>+31</td><td></td></tr>
+            				<tr><td>8</td><td class="name">John White</td><td>+34</td><td></td></tr>
+            				<tr><td>9</td><td class="name">Mark Gingles</td><td>+37</td><td></td></tr>
+            				<tr><td>10</td><td class="name">Micheal Modesto</td><td>+37</td><td></td></tr>
+            			</table>
+            		</p>
+
+            	</div>
+
+            	<div class="result">
+            		<h3>2005</h3>
+            		<p><span class="label">Finishers: </span>
+            			<table class="resultsTable">
+            				<tr><td>1</td><td class="name">John Eighmey</td><td>3:58</td><td></td></tr>
+            				<tr><td>2</td><td class="name">Dwight Wilds</td><td>+15</td><td></td></tr>
+            				<tr><td>3</td><td class="name">Larry Baker</td><td>+17</td><td></td></tr>
+            				<tr><td>4</td><td class="name">John White</td><td>+26</td><td></td></tr>
+            				<tr><td>5</td><td class="name">Robert Haley</td><td>+26</td><td></td></tr>
+            				<tr><td>6</td><td class="name">Wes Allen</td><td>+30</td><td></td></tr>
+            			</table>
+            		</p>
+            		<p><span class="label">Other competitors: </span>Paul Haley, Mark Smith</p>
+
+            	</div>
+
+
+
+            	<div class="result">
+            		<h3>2004</h3>
+            		<p><span class="label">Start Time: </span>July 24 2004, 0548</p>
+            		<p><span class="label">Finishers: </span>
+            			<table class="resultsTable">
+            				<tr><td>1</td><td class="name">Tristen Maginn</td><td>3:54</td><td></td></tr>
+            				<tr><td>2</td><td class="name">John White</td><td>+7</td><td></td></tr>
+            				<tr><td>3</td><td class="name">Wes Allen</td><td>+12</td><td></td></tr>
+            				<tr><td>4</td><td class="name">Larry Baker</td><td>+34</td><td></td></tr>
+            				<tr><td>5</td><td class="name">Robert</td><td>+48</td><td></td></tr>
+            				<tr><td>6</td><td class="name">Mike</td><td>&gt;60</td><td></td></tr>
+            			</table>
+            		</p>
+            		<p><span class="label">Other competitors: </span>Betty Jo, Paul, Keith</p>
+            	</div>
+
+            </div>
+
+					</div>
+
+
+			</div>
+
+
+			<div class="credits">
+				<div class="creditLeft">
+					<span class="label">Race Director:</span> Larry Baker
+				</div>
+				<div class="creditRight">
+					Ride your bicycle at your own risk. No bitching.</span>
+				</div>
+				<div class="clear"></div>
+			<div>
+
+
+
+
+    </body>
 </html>
